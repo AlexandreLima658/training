@@ -1,16 +1,26 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.flywaydb:flyway-mysql:8.5.10'
+    }
+}
+
+
 plugins {
     id 'java'
     id 'application'
-    id 'org.springframework.boot' version '2.6.7'
-    id 'io.spring.dependency-management' version '1.1.0'
+    id 'org.springframework.boot' version '3.2.1'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'org.flywaydb.flyway' version '8.5.10'
 }
 
 group = 'com.fullcycle.admin.catalogo.infrastructure'
 version = '1.0-SNAPSHOT'
 
 bootJar {
-    archiveFileName = 'application.jar'
-    destinationDirectory.set(file("${rootProject.buildDir}/libs"))
+    archiveFileName.set("$rootDir/build/libs/api-fat.jar")
 }
 
 repositories {
@@ -21,13 +31,25 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":application"))
 
+
     implementation('org.springframework.boot:spring-boot-starter-web'){
         exclude module: 'spring-boot-starter-tomcat'
     }
 
-    implementation('org.springframework.boot:spring-boot-starter-undertow')
+    runtimeOnly 'mysql:mysql-connector-java:8.0.33'
 
-    implementation('org.springframework.boot:spring-boot-starter-test')
+
+    implementation('org.springframework.boot:spring-boot-starter-undertow')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testRuntimeOnly('com.h2database:h2')
+}
+
+flyway {
+    url = System.getenv('FLYWAY_DB') ?: 'jdbc:mysql://localhost:3306/adm_videos'
+    user = System.getenv('FLYWAY_USER') ?: 'root'
+    password = System.getenv('FLYWAY_PASS') ?: '123456'
 }
 
 test {
