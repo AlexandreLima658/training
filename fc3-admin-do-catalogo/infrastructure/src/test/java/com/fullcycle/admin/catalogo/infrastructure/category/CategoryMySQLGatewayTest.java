@@ -206,9 +206,8 @@ public class CategoryMySQLGatewayTest {
         final var expectedPage = 0;
         final var expectedPerPage = 1;
         final var expectedTotal = 0;
-        Assertions.assertEquals(0,categoryRepository.count());
 
-        Assertions.assertEquals(3,categoryRepository.count());
+        Assertions.assertEquals(0,categoryRepository.count());
 
         final var query = new CategorySearchQuery(0,1,"", "name", "asc");
         final var actualResult = categoryGateway.findAll(query);
@@ -216,14 +215,14 @@ public class CategoryMySQLGatewayTest {
         Assertions.assertEquals(expectedPage, actualResult.currentPage());
         Assertions.assertEquals(expectedPerPage, actualResult.perPage());
         Assertions.assertEquals(expectedTotal, actualResult.total());
-        Assertions.assertEquals(expectedPerPage, actualResult.items().size());
+        Assertions.assertEquals(0, actualResult.items().size());
 
     }
     @Test
     public void givenFollowPagination_whenCallsFindAllWithPage1_shouldReturnPaginated(){
         var expectedPage = 0;
-        var expectedPerPage = 1;
-        var expectedTotal = 3;
+        final var expectedPerPage = 1;
+        final var expectedTotal = 3;
 
         final var filmes = Category.newCategory("Filmes", null, true);
         final var series = Category.newCategory("Series", null, true);
@@ -263,7 +262,7 @@ public class CategoryMySQLGatewayTest {
         // Page 2
         expectedPage = 2;
 
-        query = new CategorySearchQuery(1,1,"", "name", "asc");
+        query = new CategorySearchQuery(2,1,"", "name", "asc");
         actualResult = categoryGateway.findAll(query);
 
         Assertions.assertEquals(expectedPage, actualResult.currentPage());
