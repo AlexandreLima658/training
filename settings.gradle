@@ -1,0 +1,5 @@
+rootProject.name = 'fd3-project'
+include 'domain'
+include 'application'
+include 'infrastructure'
+
