@@ -5,20 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="200ca4cd-0ca9-4786-a787-274201504ad5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/CleanUpExtension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/IntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/application/category/create/CreateCategoryUseCaseIT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/fullcycle/admin/catalogo/domain/exceptions/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/fullcycle/admin/catalogo/infrastructure/api/CategoryAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/fullcycle/admin/catalogo/infrastructure/api/controllers/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/fullcycle/admin/catalogo/infrastructure/api/controllers/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/fullcycle/admin/catalogo/infrastructure/category/models/CategoryApiOutput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/fullcycle/admin/catalogo/infrastructure/category/models/CreateCategoryApiInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/fullcycle/admin/catalogo/infrastructure/category/models/UpdateCategoryApiInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/fullcycle/admin/catalogo/infrastructure/category/presenters/CategoryApiPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/ControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/infrastructure/api/CategoryAPITest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/src/main/java/com/fullcycle/admin/catalogo/application/category/create/CreateCategoryUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/com/fullcycle/admin/catalogo/application/category/create/CreateCategoryUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/main/java/com/fullcycle/admin/catalogo/application/category/create/CreateCategoryOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/com/fullcycle/admin/catalogo/application/category/create/CreateCategoryOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/main/java/com/fullcycle/admin/catalogo/application/category/retrieve/get/DefaultGetCategoryByIdUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/com/fullcycle/admin/catalogo/application/category/retrieve/get/DefaultGetCategoryByIdUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/main/java/com/fullcycle/admin/catalogo/application/category/update/DefaultUpdateCategoryUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/com/fullcycle/admin/catalogo/application/category/update/DefaultUpdateCategoryUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/main/java/com/fullcycle/admin/catalogo/application/category/update/UpdateCategoryOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/com/fullcycle/admin/catalogo/application/category/update/UpdateCategoryOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/fullcycle/admin/catalogo/domain/Identifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/fullcycle/admin/catalogo/domain/Identifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/fullcycle/admin/catalogo/domain/category/CategoryID.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/fullcycle/admin/catalogo/domain/category/CategoryID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/fullcycle/admin/catalogo/domain/exceptions/DomainException.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/fullcycle/admin/catalogo/domain/exceptions/DomainException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/com/fullcycle/admin/catalogo/infrastructure/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/fullcycle/admin/catalogo/infrastructure/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/com/fullcycle/admin/catalogo/infrastructure/configuration/WebServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/fullcycle/admin/catalogo/infrastructure/configuration/WebServerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/application-test.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/MySQLGatewayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/MySQLGatewayTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/infrastructure/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/infrastructure/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/infrastructure/MySQLGatewayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/MySQLGatewayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/infrastructure/category/CategoryMySQLGatewayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/infrastructure/category/CategoryMySQLGatewayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/infrastructure/category/persistence/CategoryRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/com/fullcycle/admin/catalogo/infrastructure/category/persistence/CategoryRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,18 +59,11 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="fc3-admin-do-catalogo" type="f1a62948:ProjectNode" />
-                <item name="application" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="fc3-admin-do-catalogo" type="f1a62948:ProjectNode" />
-                <item name="application" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="fc3-admin-do-catalogo" type="f1a62948:ProjectNode" />
-                <item name="application" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="verification" type="c8890929:TasksNode$1" />
               </path>
@@ -79,6 +79,7 @@
       <list>
         <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -97,6 +98,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Gradle.CategoryAPITest.executor": "Run",
+    "Gradle.CategoryAPITest.g.executor": "Run",
+    "Gradle.CategoryAPITest.givenAInvalidId_whenCallsGetCategory_shouldReturnNotFound.executor": "Run",
+    "Gradle.CategoryAPITest.givenAInvalidName_whenCallsCreateCategory_thenShouldReturnDomainException.executor": "Run",
+    "Gradle.CategoryAPITest.givenAInvalidName_whenCallsCreateCategory_thenShouldReturnNotification.executor": "Run",
+    "Gradle.CategoryAPITest.givenAValidCommand_whenCallsCreateCategory_shouldReturnCategoryId.executor": "Run",
+    "Gradle.CategoryAPITest.givenAValidId_whenCallsGetCategory_shouldReturnCategory.executor": "Run",
+    "Gradle.CategoryAPITest.givenAValid_whenCallsGetCategory_shouldReturnCategory.executor": "Run",
+    "Gradle.CategoryAPITest.test.executor": "Run",
     "Gradle.CategoryMySQLGatewayTest.executor": "Run",
     "Gradle.CategoryMySQLGatewayTest.givenAPrePersistedCategoryAnValidCategoryId_whenCallsFindById_shouldReturnCategory.executor": "Run",
     "Gradle.CategoryMySQLGatewayTest.givenAPrePersistedCategoryAndValidCategoryId_whenCallsFindById_shouldReturnCategory.executor": "Debug",
@@ -123,6 +133,7 @@
     "Gradle.fc3-admin-do-catalogo:application [test].executor": "Run",
     "Gradle.fc3-admin-do-catalogo:infrastructure [:infrastructure:Main.main()].executor": "Run",
     "Gradle.fc3-admin-do-catalogo:infrastructure [bootRun].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo:infrastructure [check].executor": "Run",
     "Gradle.fc3-admin-do-catalogo:infrastructure [clean].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -144,11 +155,25 @@
       <recent name="com.fullcycle.admin.catalogo.infrastructure.category" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.fullcycle.admin.catalogo.infrastructure.category.models" />
       <recent name="com.fullcycle.admin.catalogo" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.fc3-admin-do-catalogo:application [test]">
-    <configuration name="CreateCategoryUseCaseIT.givenAValidCommand_whenCallsCreateCategory_shouldReturnCategoryId" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fullcycle.admin.catalogo.infrastructure.Main" />
+      <module name="fc3-admin-do-catalogo.infrastructure.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fullcycle.admin.catalogo.infrastructure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryAPITest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -161,7 +186,7 @@
           <list>
             <option value=":infrastructure:test" />
             <option value="--tests" />
-            <option value="&quot;com.fullcycle.admin.catalogo.application.category.create.CreateCategoryUseCaseIT.givenAValidCommand_whenCallsCreateCategory_shouldReturnCategoryId&quot;" />
+            <option value="&quot;com.fullcycle.admin.catalogo.infrastructure.api.CategoryAPITest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -172,7 +197,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MainTest.testMain" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CategoryAPITest.givenAInvalidId_whenCallsGetCategory_shouldReturnNotFound" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -185,7 +210,7 @@
           <list>
             <option value=":infrastructure:test" />
             <option value="--tests" />
-            <option value="&quot;com.fullcycle.admin.catalogo.infrastructure.MainTest.testMain&quot;" />
+            <option value="&quot;com.fullcycle.admin.catalogo.infrastructure.api.CategoryAPITest.givenAInvalidId_whenCallsGetCategory_shouldReturnNotFound&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -196,7 +221,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SampleIT" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CategoryAPITest.givenAValidId_whenCallsGetCategory_shouldReturnCategory" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -209,7 +234,7 @@
           <list>
             <option value=":infrastructure:test" />
             <option value="--tests" />
-            <option value="&quot;com.fullcycle.admin.catalogo.application.SampleIT&quot;" />
+            <option value="&quot;com.fullcycle.admin.catalogo.infrastructure.api.CategoryAPITest.givenAValidId_whenCallsGetCategory_shouldReturnCategory&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -220,7 +245,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SampleIT.testInjects" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CategoryAPITest.givenAValid_whenCallsGetCategory_shouldReturnCategory" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -233,7 +258,7 @@
           <list>
             <option value=":infrastructure:test" />
             <option value="--tests" />
-            <option value="&quot;com.fullcycle.admin.catalogo.application.SampleIT.testInjects&quot;" />
+            <option value="&quot;com.fullcycle.admin.catalogo.infrastructure.api.CategoryAPITest.givenAValid_whenCallsGetCategory_shouldReturnCategory&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -242,37 +267,15 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="fc3-admin-do-catalogo:application [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/application" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.fc3-admin-do-catalogo:application [test]" />
-        <item itemvalue="Gradle.CreateCategoryUseCaseIT.givenAValidCommand_whenCallsCreateCategory_shouldReturnCategoryId" />
-        <item itemvalue="Gradle.SampleIT" />
-        <item itemvalue="Gradle.MainTest.testMain" />
-        <item itemvalue="Gradle.SampleIT.testInjects" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.CategoryAPITest.givenAInvalidId_whenCallsGetCategory_shouldReturnNotFound" />
+        <item itemvalue="Gradle.CategoryAPITest.givenAValidId_whenCallsGetCategory_shouldReturnCategory" />
+        <item itemvalue="Gradle.CategoryAPITest.givenAValid_whenCallsGetCategory_shouldReturnCategory" />
+        <item itemvalue="Gradle.CategoryAPITest" />
       </list>
     </recent_temporary>
   </component>
