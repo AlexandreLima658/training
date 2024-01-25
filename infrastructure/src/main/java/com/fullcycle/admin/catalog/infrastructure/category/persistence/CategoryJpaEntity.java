@@ -15,7 +15,7 @@ public class CategoryJpaEntity {
     @Id
     private String id;
 
-    @Column(name = "column", nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Column(name = "description", length = 4000)
