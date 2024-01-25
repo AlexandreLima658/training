@@ -13,10 +13,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
 import java.util.Optional;
 
 @Service
@@ -63,7 +59,7 @@ public class CategoryMySQLGateway implements CategoryGateway {
                         .filter(str -> !str.isBlank())
                         .map(str -> {
                             return SpecificationUtils.<CategoryJpaEntity>like("name", str)
-                                    .or(SpecificationUtils.<CategoryJpaEntity>like("description", str))
+                                    .or(SpecificationUtils.<CategoryJpaEntity>like("description", str));
                         })
                         .orElse(null);
 
