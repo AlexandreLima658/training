@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping(value = "categories")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @Tag(name = "Categories")
 public interface CategoryAPI {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
