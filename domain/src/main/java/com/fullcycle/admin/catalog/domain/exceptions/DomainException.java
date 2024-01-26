@@ -5,9 +5,9 @@ import com.fullcycle.admin.catalog.domain.validation.Error;
 import java.util.List;
 
 public class DomainException extends NoStackTraceException {
-    private final List<Error> errors;
+    protected final List<Error> errors;
 
-    public DomainException(final String aMessage, List<Error> anErrors) {
+    protected DomainException(final String aMessage, List<Error> anErrors) {
         super(aMessage);
         this.errors = anErrors;
     }
