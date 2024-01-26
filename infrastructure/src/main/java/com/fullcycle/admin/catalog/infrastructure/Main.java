@@ -19,17 +19,4 @@ public class Main {
         System.setProperty(AbstractEnvironment.DEFAULT_PROFILES_PROPERTY_NAME, "development");
         SpringApplication.run(WebServerConfig.class, args);
     }
-
-    @Bean
-    public ApplicationRunner runner(CategoryRepository repository) {
-        return args -> {
-            List<CategoryJpaEntity> all = repository.findAll();
-
-            System.out.println(all.size());
-
-            //final var aCategory = Category.newCategory("Filmes", null, true);
-
-
-        };
-    }
 }

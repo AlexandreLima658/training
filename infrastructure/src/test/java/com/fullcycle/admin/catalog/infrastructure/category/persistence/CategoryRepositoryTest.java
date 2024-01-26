@@ -1,13 +1,12 @@
 package com.fullcycle.admin.catalog.infrastructure.category.persistence;
 
 import com.fullcycle.admin.catalog.domain.category.Category;
-import com.fullcycle.admin.catalog.infrastructure.MySQLGatewayTest;
+import com.fullcycle.admin.catalog.MySQLGatewayTest;
 import org.hibernate.PropertyValueException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.wildfly.common.Assert;
 
 @MySQLGatewayTest
 public class CategoryRepositoryTest {
