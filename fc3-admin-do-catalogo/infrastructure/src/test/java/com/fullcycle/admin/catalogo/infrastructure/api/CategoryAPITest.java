@@ -14,6 +14,7 @@ import com.fullcycle.admin.catalogo.domain.validation.Error;
 import com.fullcycle.admin.catalogo.domain.validation.handler.Notification;
 //import com.fullcycle.admin.catalogo.infrastructure.category.models.CreateCategoryRequest;
 import com.fullcycle.admin.catalogo.infrastructure.category.models.CreateCategoryApiInput;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -66,7 +67,74 @@ public class CategoryAPITest {
                 .andExpectAll(header().string("Content-Type", MediaType.APPLICATION_JSON_VALUE))
                 .andExpectAll(jsonPath("$.id", equalTo("123")));
 
+        verify(createCategoryUseCase, times(1)).execute(argThat(cmd ->
+                Objects.equals(expectedName, cmd.name())
+                        && Objects.equals(expectedDescription, cmd.description())
+                        && Objects.equals(expectedIsActive, cmd.isActive())
+        ));
+    }
 
+    @Test
+    public void givenAInvalidName_whenCallsCreateCategory_thenShouldReturnNotification() throws Exception{
+        final String expectedName = null;
+        final var expectedDescription = "A categoria mais assistida";
+        final var expectedIsActive = true;
+        final var expectedMessage = "'name' should not be null";
+
+        final var aInput =
+                new CreateCategoryApiInput(expectedName, expectedDescription, expectedIsActive);
+
+        when(createCategoryUseCase.execute(any()))
+                .thenReturn(Left(Notification.create(new Error(expectedMessage))));
+
+        final var request = post("/categories")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(this.mapper.writeValueAsString(aInput));
+
+        final var response  = this.mvc.perform(request)
+                .andDo(print());
+
+        //then
+        response.andExpectAll(status().isUnprocessableEntity())
+                .andExpectAll(header().string("Location", nullValue()))
+                .andExpectAll(header().string("Content-Type", MediaType.APPLICATION_JSON_VALUE))
+                .andExpectAll(jsonPath("$.errors", hasSize(1)))
+                .andExpectAll(jsonPath("$.errors[0].message", equalTo(expectedMessage)));
+
+        verify(createCategoryUseCase, times(1)).execute(argThat(cmd ->
+                Objects.equals(expectedName, cmd.name())
+                        && Objects.equals(expectedDescription, cmd.description())
+                        && Objects.equals(expectedIsActive, cmd.isActive())
+        ));
+    }
+
+    @Test
+    public void givenAInvalidCommand_whenCallsCreateCategory_thenShouldReturnDomainException() throws Exception{
+        final String expectedName = null;
+        final var expectedDescription = "A categoria mais assistida";
+        final var expectedIsActive = true;
+        final var expectedMessage = "'name' should not be null";
+
+        final var aInput =
+                new CreateCategoryApiInput(expectedName, expectedDescription, expectedIsActive);
+
+        when(createCategoryUseCase.execute(any()))
+                .thenThrow(DomainException.with(new Error(expectedMessage)));
+
+        final var request = post("/categories")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(this.mapper.writeValueAsString(aInput));
+
+        final var response  = this.mvc.perform(request)
+                .andDo(print());
+
+        //then
+        response.andExpectAll(status().isUnprocessableEntity())
+                .andExpectAll(header().string("Location", nullValue()))
+                .andExpectAll(header().string("Content-Type", MediaType.APPLICATION_JSON_VALUE))
+                .andExpectAll(jsonPath("$.message", equalTo(expectedMessage)))
+                .andExpectAll(jsonPath("$.errors", hasSize(1)))
+                .andExpectAll(jsonPath("$.errors[0].message", equalTo(expectedMessage)));
 
         verify(createCategoryUseCase, times(1)).execute(argThat(cmd ->
                 Objects.equals(expectedName, cmd.name())
